@@ -7,8 +7,8 @@
 const NURSERY_CONFIG = {
   nurseryName: "Orchid Haven Nursery",
   location: "Chathari, Tripunithura, Ernakulam, Kerala (Krishibhavan Unit)",
-  whatsappNumber: "919876543210", // UPDATE with parents' WhatsApp number
-  contactPhone: "+91 98765 43210",
+  whatsappNumber: "919495819173",
+  contactPhone: "+91 94958 19173",
   instagramUrl: "https://www.instagram.com/orchid.haven_nursery/",
   instagramHandle: "@orchid.haven_nursery",
   email: "orchidhaven.kerala@gmail.com"

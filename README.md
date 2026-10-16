@@ -10,15 +10,16 @@ A modern, botanical-luxury website crafted for **Orchid Haven Nursery** (`@orchi
    - Nursery: **Orchid Haven Nursery**
    - Location: **📍 Chathari, Tripunithura, Ernakulam, Kerala (PIN: 682301)**
    - Instagram: [@orchid.haven_nursery](https://www.instagram.com/orchid.haven_nursery/)
-   - Founder: **Sri Sivadasan A.K.**
+   - WhatsApp / Phone: **+91 94958 19173**
+   - Founders: **Mother (Founder & Visionary Brain, retired from LIC of India)** and **Sri Sivadasan A.K. (Co-Founder & Chief Handyman, retired from Kochi Refinery)**
 2. **Authentic Orchid Catalog**:
    - Filter by popular varieties (*Dendrobiums*, *Vandas*, *Phalaenopsis*, *Substrates*).
    - Real-time search & price sorting.
-   - Real photos of parents' blooms (*Burana Green Apple*, *Royal Purple Velvet*, *Pink Splash*, *Sunset Burgundy*, *Pastel Lilac*).
+   - Real photos of parents' blooms (*Burana Green Apple*, *Royal Purple Velvet*, *Pink Splash*, *Sunset Burgundy*, *Pastel Lilac*, *Sonia White Crystal*, *Antelope Violet Twist*).
    - Quick-view modals with detailed botanical specs.
 3. **Integrated WhatsApp Order & Enquiry Drawer**:
    - Customers can add multiple plants to their basket.
-   - Generates an instant, pre-formatted WhatsApp message link with items, estimated prices, and delivery location sent directly to parents' phone.
+   - Generates an instant, pre-formatted WhatsApp message link with items, estimated prices, and delivery location sent directly to parents' phone (+91 94958 19173).
 4. **Greenhouse Video Tour**:
    - Embedded video player of the actual shade house in Chathari.
 5. **Kerala Climate Orchid Care Guide**:
@@ -38,13 +39,18 @@ Orchid Nursery/
 ├── assets/
 │   └── images/
 │       ├── nursery/           # Real photos and greenhouse tour video
-│       │   ├── sivadasan_greenhouse.jpg
+│       │   ├── father_sivadasan.jpg
+│       │   ├── mother_kasavu.jpg
+│       │   ├── mother_desk.jpg
 │       │   ├── greenhouse_tour.mp4
+│       │   ├── greenhouse_backdrop.jpg
 │       │   ├── dendrobium_purple_velvet.jpg
 │       │   ├── dendrobium_burana_green.jpg
 │       │   ├── dendrobium_pink_splash.jpg
 │       │   ├── dendrobium_burgundy_gold.jpg
-│       │   └── dendrobium_pastel_lilac.jpg
+│       │   ├── dendrobium_pastel_lilac.jpg
+│       │   ├── dendrobium_snow_purple.jpg
+│       │   └── dendrobium_antelope_twist.jpg
 │       └── care_supplies.jpg
 ├── .gitignore
 └── README.md
@@ -52,16 +58,16 @@ Orchid Nursery/
 
 ---
 
-## ⚙️ Updating WhatsApp Phone Number
+## ⚙️ Nursery Configuration
 
-Open [js/app.js](file:///Users/amaldasambattuparambilsivadasan/Desktop/Orchid%20Nursery/js/app.js) and update the `whatsappNumber` in `NURSERY_CONFIG` (include `91` country code):
+Open [js/app.js](file:///Users/amaldasambattuparambilsivadasan/Desktop/Orchid%20Nursery/js/app.js):
 
 ```javascript
 const NURSERY_CONFIG = {
   nurseryName: "Orchid Haven Nursery",
-  location: "Chathari, Tripunithura, Ernakulam, Kerala",
-  whatsappNumber: "91XXXXXXXXXX", // <-- Put parents' WhatsApp number here
-  contactPhone: "+91 XXXXX XXXXX",
+  location: "Chathari, Tripunithura, Ernakulam, Kerala (Krishibhavan Unit)",
+  whatsappNumber: "919495819173",
+  contactPhone: "+91 94958 19173",
   instagramUrl: "https://www.instagram.com/orchid.haven_nursery/",
   instagramHandle: "@orchid.haven_nursery",
   email: "orchidhaven.kerala@gmail.com"
