@@ -29,8 +29,8 @@
   <!-- Top Announcement Bar -->
   <aside class="top-announcement" aria-label="Nursery Announcement">
     <div class="container announcement-text">
-      <span>🌿 <span class="announcement-highlight">Orchid Haven</span> • 📍 Chathari, Tripunithura • Follow us on Instagram <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" style="color: var(--gold-light); font-weight: 700; text-decoration: underline;"><i class="fa-brands fa-instagram"></i> @orchid.haven_nursery</a></span>
-      <a href="https://wa.me/919495819173?text=Namaskaram!%20I%20saw%20your%20Instagram%20page%20@orchid.haven_nursery%20and%20would%20like%20to%20enquire%20about%20plants." target="_blank" rel="noopener" style="color: var(--gold-light); font-weight: 700; margin-left: 14px; text-decoration: underline;">
+      <span>🌿 <span class="announcement-highlight">Orchid Haven</span> • 📍 Chathari, Tripunithura • Follow us on Instagram <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="announcement-link"><i class="fa-brands fa-instagram"></i> @orchid.haven_nursery</a></span>
+      <a href="https://wa.me/919495819173?text=Namaskaram!%20I%20saw%20your%20Instagram%20page%20@orchid.haven_nursery%20and%20would%20like%20to%20enquire%20about%20plants." target="_blank" rel="noopener" class="announcement-cta">
         WhatsApp Order &rarr;
       </a>
     </div>
@@ -66,9 +66,9 @@
       <!-- Header Actions -->
       <div class="header-actions">
         <!-- Instagram Link Button -->
-        <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="btn-outline-glass" style="color: var(--primary-dark); border-color: rgba(18, 61, 43, 0.2); padding: 8px 14px; font-size: 0.85rem;" title="Follow Orchid Haven on Instagram">
-          <i class="fa-brands fa-instagram" style="color: #e1306c; font-size: 1.1rem;"></i>
-          <span style="font-weight: 700;">@orchid.haven_nursery</span>
+        <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="btn-outline-glass header-ig-btn" title="Follow Orchid Haven on Instagram">
+          <i class="fa-brands fa-instagram ig-pink-icon"></i>
+          <span class="header-ig-handle">@orchid.haven_nursery</span>
         </a>
 
         <!-- Live WhatsApp Enquiry Cart Button -->
@@ -115,11 +115,11 @@
             <span>Browse Available Blooms</span>
           </a>
           <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="btn-outline-glass">
-            <i class="fa-brands fa-instagram" style="color: #ff7aa2;"></i>
+            <i class="fa-brands fa-instagram hero-ig-icon"></i>
             <span>Visit @orchid.haven_nursery</span>
           </a>
           <a href="https://wa.me/919495819173?text=Hi!%20Could%20you%20please%20share%20the%20photos%20of%20orchids%20currently%20in%20bloom%20at%20Orchid%20Haven?" target="_blank" rel="noopener" class="btn-outline-glass">
-            <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+            <i class="fa-brands fa-whatsapp hero-wa-icon"></i>
             <span>WhatsApp Enquiry</span>
           </a>
         </div>
@@ -192,7 +192,7 @@
         </div>
         <div class="highlight-box">
           <div class="highlight-icon-wrap">
-            <i class="fa-brands fa-instagram" style="color: #e1306c;"></i>
+            <i class="fa-brands fa-instagram highlight-ig-icon"></i>
           </div>
           <div>
             <h4 class="highlight-title">Follow @orchid.haven_nursery</h4>
@@ -244,7 +244,7 @@
   </section>
 
   <!-- Live Greenhouse Video Tour Section -->
-  <section class="story-section" id="greenhouse-tour" style="background: var(--surface-alt); border-top: 1px solid var(--border-light);">
+  <section class="story-section greenhouse-tour-section" id="greenhouse-tour">
     <div class="container">
       <div class="text-center">
         <span class="section-tag"><i class="fa-solid fa-video"></i> Video Tour</span>
@@ -254,16 +254,16 @@
         </p>
       </div>
 
-      <div style="max-width: 820px; margin: 0 auto; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 2px solid var(--border-light); background: #000;">
-        <video controls playsinline preload="metadata" style="width: 100%; max-height: 520px; display: block; object-fit: contain;">
+      <div class="video-showcase-frame">
+        <video controls playsinline preload="metadata" class="video-showcase-player">
           <source src="assets/images/nursery/greenhouse_tour.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
 
-      <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="btn-outline-glass" style="color: var(--primary-dark); border-color: rgba(18, 61, 43, 0.25);">
-          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> See More Reels on Instagram @orchid.haven_nursery
+      <div class="video-showcase-actions">
+        <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="btn-outline-glass video-instagram-btn">
+          <i class="fa-brands fa-instagram ig-pink-icon"></i> See More Reels on Instagram @orchid.haven_nursery
         </a>
       </div>
     </div>
@@ -283,6 +283,7 @@
       <div class="care-grid">
         <!-- Rule 1: Light -->
         <div class="care-card">
+          <span class="care-watermark" aria-hidden="true">01</span>
           <div class="care-icon-box">
             <i class="fa-solid fa-sun"></i>
           </div>
@@ -298,6 +299,7 @@
 
         <!-- Rule 2: Potting Medium -->
         <div class="care-card">
+          <span class="care-watermark" aria-hidden="true">02</span>
           <div class="care-icon-box">
             <i class="fa-solid fa-cubes-stacked"></i>
           </div>
@@ -313,6 +315,7 @@
 
         <!-- Rule 3: Monsoon vs Summer -->
         <div class="care-card">
+          <span class="care-watermark" aria-hidden="true">03</span>
           <div class="care-icon-box">
             <i class="fa-solid fa-cloud-showers-heavy"></i>
           </div>
@@ -328,6 +331,7 @@
 
         <!-- Rule 4: Feeding & Blooming -->
         <div class="care-card">
+          <span class="care-watermark" aria-hidden="true">04</span>
           <div class="care-icon-box">
             <i class="fa-solid fa-wand-magic-sparkles"></i>
           </div>
@@ -431,7 +435,7 @@
       <!-- Shared Philosophy Banner -->
       <div class="founders-legacy-banner">
         <div class="legacy-content">
-          <span style="color: var(--gold-light); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; display: block; margin-bottom: 6px;">
+          <span class="legacy-badge">
             <i class="fa-solid fa-hand-holding-heart"></i> Our Shared Philosophy
           </span>
           <h3>Two Pillars of Public Trust, Cultivating Natural Beauty</h3>
@@ -440,7 +444,7 @@
           </p>
         </div>
         <div>
-          <a href="https://wa.me/919495819173?text=Namaskaram!%20I%20would%20love%20to%20connect%20with%20the%20team%20at%20Orchid%20Haven%20and%20enquire%20about%20plants." target="_blank" rel="noopener" class="btn-primary" style="white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
+          <a href="https://wa.me/919495819173?text=Namaskaram!%20I%20would%20love%20to%20connect%20with%20the%20team%20at%20Orchid%20Haven%20and%20enquire%20about%20plants." target="_blank" rel="noopener" class="btn-primary legacy-btn">
             <i class="fa-brands fa-whatsapp"></i> Connect on WhatsApp
           </a>
         </div>
@@ -537,7 +541,7 @@
       <div class="visit-card-grid">
         <div class="visit-info-col">
           <h3>Nursery Timings & Visiting Guide</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">
+          <p class="visit-lead-text">
             We are always delighted to show visitors our collection, discuss repotting with coconut chips, and guide beginners on caring for flower spikes.
           </p>
 
@@ -666,6 +670,21 @@
     </div>
   </section>
 
+  <!-- Mobile Floating Quick Enquiry Bar (Mirroring Cart State) -->
+  <aside class="mobile-floating-bar" id="mobileFloatingBar" aria-label="Mobile Enquiry Basket Bar">
+    <button class="mobile-floating-btn" id="mobileFloatingCartBtn" aria-label="Open Orchid Enquiry Basket">
+      <div class="mobile-floating-icon-wrap">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span class="mobile-cart-badge" id="mobileCartBadge">0</span>
+      </div>
+      <div class="mobile-floating-info">
+        <span class="mobile-floating-title">Enquiry Basket</span>
+        <span class="mobile-floating-total" id="mobileFloatingTotal">View Plants</span>
+      </div>
+      <span class="mobile-floating-action">Review &rarr;</span>
+    </button>
+  </aside>
+
   <!-- Slide-over WhatsApp Enquiry Drawer -->
   <div class="drawer-overlay" id="drawerOverlay"></div>
   <aside class="enquiry-drawer" id="enquiryDrawer" aria-label="Enquiry Basket">
@@ -681,7 +700,7 @@
       <div class="drawer-empty-state" id="drawerEmptyState">
         <i class="fa-solid fa-seedling"></i>
         <h4>Your basket is empty</h4>
-        <p style="font-size: 0.9rem; margin-top: 6px;">Browse our blooms and click "+ Add to Enquiry" to build your custom plant list.</p>
+        <p class="drawer-empty-sub">Browse our blooms and click "+ Add to Enquiry" to build your custom plant list.</p>
       </div>
 
       <!-- Selected Items Container -->
@@ -689,7 +708,7 @@
 
       <!-- Customer Details Form -->
       <div class="drawer-customer-form" id="customerFormWrap">
-        <h5 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--text-dark);">
+        <h5 class="customer-form-title">
           Your Contact / Delivery Details
         </h5>
         <div class="form-group">
@@ -713,10 +732,10 @@
         <span class="drawer-total-val" id="drawerTotalPrice">₹0</span>
       </div>
       <button class="btn-send-whatsapp-order" id="sendWhatsappOrderBtn">
-        <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+        <i class="fa-brands fa-whatsapp drawer-whatsapp-icon"></i>
         <span>Send Enquiry on WhatsApp &rarr;</span>
       </button>
-      <p style="font-size: 0.76rem; text-align: center; color: var(--text-muted); margin-top: 8px;">
+      <p class="drawer-note">
         * No payment needed now. We will reply on WhatsApp with exact photos of the plants!
       </p>
     </div>
@@ -728,7 +747,7 @@
       <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div id="quickviewContent" style="display: contents;"></div>
+      <div id="quickviewContent"></div>
     </div>
   </div>
 
@@ -798,21 +817,21 @@
 
         <div class="footer-col">
           <h5>Nursery Contact</h5>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px; color: #a4beae;">
-            <i class="fa-solid fa-location-dot" style="color: var(--gold-light); margin-right: 8px;"></i>
-            Chathari, Tripunithura, Ernakulam 682301
+          <p class="footer-contact-item">
+            <i class="fa-solid fa-location-dot footer-contact-icon"></i>
+            <span>Chathari, Tripunithura, Ernakulam 682301</span>
           </p>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px; color: #a4beae;">
-            <i class="fa-brands fa-instagram" style="color: #e1306c; margin-right: 8px;"></i>
-            <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">@orchid.haven_nursery</a>
+          <p class="footer-contact-item">
+            <i class="fa-brands fa-instagram footer-contact-icon footer-ig-color"></i>
+            <a href="https://www.instagram.com/orchid.haven_nursery/" target="_blank" rel="noopener" class="footer-contact-link">@orchid.haven_nursery</a>
           </p>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px; color: #a4beae;">
-            <i class="fa-brands fa-whatsapp" style="color: #25d366; margin-right: 8px;"></i>
-            +91 94958 19173
+          <p class="footer-contact-item">
+            <i class="fa-brands fa-whatsapp footer-contact-icon footer-wa-color"></i>
+            <span>+91 94958 19173</span>
           </p>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: #a4beae;">
-            <i class="fa-solid fa-clock" style="color: var(--gold-light); margin-right: 8px;"></i>
-            Mon–Sat: 8:30 AM – 6:00 PM
+          <p class="footer-contact-item">
+            <i class="fa-solid fa-clock footer-contact-icon"></i>
+            <span>Mon–Sat: 8:30 AM – 6:00 PM</span>
           </p>
         </div>
       </div>

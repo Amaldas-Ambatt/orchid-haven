@@ -229,11 +229,13 @@ function initEventListeners() {
   const cartDrawer = document.getElementById("enquiryDrawer");
   const drawerOverlay = document.getElementById("drawerOverlay");
   const closeDrawerBtn = document.getElementById("closeDrawerBtn");
+  const mobileFloatingCartBtn = document.getElementById("mobileFloatingCartBtn");
 
   if (cartBtn && cartDrawer && drawerOverlay) {
     cartBtn.addEventListener("click", () => openDrawer());
     closeDrawerBtn?.addEventListener("click", () => closeDrawer());
     drawerOverlay.addEventListener("click", () => closeDrawer());
+    mobileFloatingCartBtn?.addEventListener("click", () => openDrawer());
   }
 
   // WhatsApp Order Submission
@@ -502,12 +504,32 @@ function updateCartUI() {
   const footer = document.getElementById("drawerFooter");
   const totalDisplay = document.getElementById("drawerTotalPrice");
 
+  const mobileBadge = document.getElementById("mobileCartBadge");
+  const mobileBar = document.getElementById("mobileFloatingBar");
+  const mobileTotal = document.getElementById("mobileFloatingTotal");
+
   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
   if (countBadge) {
     countBadge.textContent = totalItems;
     countBadge.style.display = totalItems > 0 ? "flex" : "none";
+  }
+
+  if (mobileBadge) {
+    mobileBadge.textContent = totalItems;
+  }
+
+  if (mobileTotal) {
+    mobileTotal.textContent = totalItems > 0 ? `₹${totalPrice.toLocaleString("en-IN")}` : "View Plants";
+  }
+
+  if (mobileBar) {
+    if (totalItems > 0) {
+      mobileBar.classList.add("visible");
+    } else {
+      mobileBar.classList.remove("visible");
+    }
   }
 
   if (totalItems === 0) {
