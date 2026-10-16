@@ -92,6 +92,36 @@ const ORCHID_CATALOG = [
     description: "Gentle lavender-pink hues fading softly to white. Multi-branching spikes with delicate flowers that stay fresh for weeks in Kerala's warm breeze."
   },
   {
+    id: "dend-real-06",
+    name: "Dendrobium Sonia White Crystal",
+    botanical: "Dendrobium hybrid (White with Fuchsia Lip)",
+    category: "dendrobium",
+    price: 350,
+    statusBadge: "Farm Favorite",
+    image: "assets/images/nursery/dendrobium_snow_purple.jpg",
+    difficulty: "Very Easy",
+    sunlight: "50-70% Shade Net",
+    watering: "Daily morning misting",
+    potting: "Coconut husk & charcoal",
+    bloomDuration: "7 to 8 weeks",
+    description: "Pristine crystalline white petals with a striking deep fuchsia throat. Incredibly floriferous, forming cascading sprays of flowers that last almost two months."
+  },
+  {
+    id: "dend-real-07",
+    name: "Dendrobium Antelope Violet Twist",
+    botanical: "Dendrobium spatulata hybrid",
+    category: "dendrobium",
+    price: 390,
+    statusBadge: "Exotic Petals",
+    image: "assets/images/nursery/dendrobium_antelope_twist.jpg",
+    difficulty: "Easy",
+    sunlight: "50% Filtered Sunlight",
+    watering: "Daily during summer",
+    potting: "Perforated pot with charcoal",
+    bloomDuration: "6 to 8 weeks",
+    description: "Distinguished by whimsical corkscrew twisted petals resembling antelope horns in hues of amethyst violet and lilac. Long-lasting and highly unique."
+  },
+  {
     id: "vanda-06",
     name: "Vanda Coerulea 'Blue Queen'",
     botanical: "Vanda coerulea Griff. ex Lindl.",
