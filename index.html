@@ -359,11 +359,12 @@
       <div class="founders-dual-grid">
         <!-- Mother: Founder & The Brain -->
         <article class="founder-card">
-          <div class="founder-img-box">
-            <img src="assets/images/nursery/mother_kasavu.jpg" alt="Mother, Founder and Visionary Brain behind Orchid Haven Nursery" class="founder-img">
+          <div class="founder-img-box" onclick="openFounderLightbox('mother')" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo of Founder">
+            <img src="assets/images/nursery/mother_kasavu.jpg" alt="Mother, Founder and Visionary Brain behind Orchid Haven Nursery" class="founder-img expandable-img">
             <span class="founder-badge-pill">
               <i class="fa-solid fa-brain"></i> Founder & The Brain
             </span>
+            <div class="founder-zoom-hint"><i class="fa-solid fa-expand"></i> Click to expand</div>
           </div>
           <div class="founder-body">
             <div class="founder-title-row">
@@ -393,11 +394,12 @@
 
         <!-- Father: Sri Sivadasan A.K. (Co-Founder & Chief Handyman) -->
         <article class="founder-card">
-          <div class="founder-img-box">
-            <img src="assets/images/nursery/father_sivadasan.jpg" alt="Sri Sivadasan A.K., Co-Founder and Chief Handyman of Orchid Haven" class="founder-img">
+          <div class="founder-img-box" onclick="openFounderLightbox('father')" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo of Sri Sivadasan A.K.">
+            <img src="assets/images/nursery/father_sivadasan.jpg" alt="Sri Sivadasan A.K., Co-Founder and Chief Handyman of Orchid Haven" class="founder-img expandable-img">
             <span class="founder-badge-pill">
               <i class="fa-solid fa-screwdriver-wrench"></i> Chief Handyman & Operations
             </span>
+            <div class="founder-zoom-hint"><i class="fa-solid fa-expand"></i> Click to expand</div>
           </div>
           <div class="founder-body">
             <div class="founder-title-row">
@@ -459,8 +461,9 @@
 
       <div class="gallery-grid">
         <!-- Photo 1: Greenhouse Backdrop -->
-        <div class="gallery-card">
-          <img src="assets/images/nursery/greenhouse_backdrop.jpg" alt="Orchid Haven greenhouse canopy overlooking historic Tripunithura" class="gallery-img" loading="lazy">
+        <div class="gallery-card" onclick="openGalleryLightbox(0)" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo: Chathari Greenhouse Canopy">
+          <img src="assets/images/nursery/greenhouse_backdrop.jpg" alt="Orchid Haven greenhouse canopy overlooking historic Tripunithura" class="gallery-img expandable-img" loading="lazy">
+          <div class="gallery-expand-indicator"><i class="fa-solid fa-expand"></i></div>
           <div class="gallery-overlay">
             <span class="gallery-tag">Chathari Greenhouse</span>
             <h4 class="gallery-caption">Canopy & Shade Net Benches</h4>
@@ -468,8 +471,9 @@
         </div>
 
         <!-- Photo 2: Burana Green -->
-        <div class="gallery-card">
-          <img src="assets/images/nursery/dendrobium_burana_green.jpg" alt="Rare Burana Green Apple orchid in full bloom" class="gallery-img" loading="lazy">
+        <div class="gallery-card" onclick="openGalleryLightbox(1)" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo: Burana Green Apple">
+          <img src="assets/images/nursery/dendrobium_burana_green.jpg" alt="Rare Burana Green Apple orchid in full bloom" class="gallery-img expandable-img" loading="lazy">
+          <div class="gallery-expand-indicator"><i class="fa-solid fa-expand"></i></div>
           <div class="gallery-overlay">
             <span class="gallery-tag">Exotic Cultivar</span>
             <h4 class="gallery-caption">Burana Green Apple</h4>
@@ -477,8 +481,9 @@
         </div>
 
         <!-- Photo 3: Sonia White Crystal -->
-        <div class="gallery-card">
-          <img src="assets/images/nursery/dendrobium_snow_purple.jpg" alt="Dendrobium Sonia White Crystal blooming cluster" class="gallery-img" loading="lazy">
+        <div class="gallery-card" onclick="openGalleryLightbox(2)" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo: Sonia White & Fuchsia Lip">
+          <img src="assets/images/nursery/dendrobium_snow_purple.jpg" alt="Dendrobium Sonia White Crystal blooming cluster" class="gallery-img expandable-img" loading="lazy">
+          <div class="gallery-expand-indicator"><i class="fa-solid fa-expand"></i></div>
           <div class="gallery-overlay">
             <span class="gallery-tag">Prolific Bloomer</span>
             <h4 class="gallery-caption">Sonia White & Fuchsia Lip</h4>
@@ -486,8 +491,9 @@
         </div>
 
         <!-- Photo 4: Antelope Twist -->
-        <div class="gallery-card">
-          <img src="assets/images/nursery/dendrobium_antelope_twist.jpg" alt="Antelope twisted petal orchid" class="gallery-img" loading="lazy">
+        <div class="gallery-card" onclick="openGalleryLightbox(3)" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo: Antelope Violet Twist">
+          <img src="assets/images/nursery/dendrobium_antelope_twist.jpg" alt="Antelope twisted petal orchid" class="gallery-img expandable-img" loading="lazy">
+          <div class="gallery-expand-indicator"><i class="fa-solid fa-expand"></i></div>
           <div class="gallery-overlay">
             <span class="gallery-tag">Botanical Wonder</span>
             <h4 class="gallery-caption">Antelope Violet Twist</h4>
@@ -495,8 +501,9 @@
         </div>
 
         <!-- Photo 5: Pink Splash -->
-        <div class="gallery-card">
-          <img src="assets/images/nursery/dendrobium_pink_splash.jpg" alt="Two-tone pink splash orchid petals" class="gallery-img" loading="lazy">
+        <div class="gallery-card" onclick="openGalleryLightbox(4)" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo: Candy Flare & Splash Petals">
+          <img src="assets/images/nursery/dendrobium_pink_splash.jpg" alt="Two-tone pink splash orchid petals" class="gallery-img expandable-img" loading="lazy">
+          <div class="gallery-expand-indicator"><i class="fa-solid fa-expand"></i></div>
           <div class="gallery-overlay">
             <span class="gallery-tag">Artistic Blossom</span>
             <h4 class="gallery-caption">Candy Flare & Splash Petals</h4>
@@ -504,8 +511,9 @@
         </div>
 
         <!-- Photo 6: Mother Administration & Care -->
-        <div class="gallery-card">
-          <img src="assets/images/nursery/mother_desk.jpg" alt="Co-Founder greeting customers and managing orders" class="gallery-img" loading="lazy">
+        <div class="gallery-card" onclick="openGalleryLightbox(5)" role="button" tabindex="0" title="Click to view full photo" aria-label="Expand photo: Warm Hospitality & Dispatch Care">
+          <img src="assets/images/nursery/mother_desk.jpg" alt="Co-Founder greeting customers and managing orders" class="gallery-img expandable-img" loading="lazy">
+          <div class="gallery-expand-indicator"><i class="fa-solid fa-expand"></i></div>
           <div class="gallery-overlay">
             <span class="gallery-tag">Heart of Orchid Haven</span>
             <h4 class="gallery-caption">Warm Hospitality & Dispatch Care</h4>
@@ -721,6 +729,30 @@
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div id="quickviewContent" style="display: contents;"></div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Lightbox / Expandable Image Viewer (YogaParvati Style) -->
+  <div class="lightbox-modal" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Image Fullscreen Viewer">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <button class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close fullscreen view">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button class="lightbox-nav-btn prev-btn" id="lightboxPrevBtn" aria-label="Previous image">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="lightbox-nav-btn next-btn" id="lightboxNextBtn" aria-label="Next image">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="lightbox-container" id="lightboxContainer">
+      <div class="lightbox-img-wrap">
+        <img src="" alt="" class="lightbox-img" id="lightboxImage">
+      </div>
+      <div class="lightbox-caption-box">
+        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        <p class="lightbox-desc" id="lightboxDesc"></p>
+        <span class="lightbox-counter" id="lightboxCounter"></span>
+      </div>
     </div>
   </div>
 

@@ -262,6 +262,51 @@ function initEventListeners() {
       if (e.target === modalBackdrop) modalBackdrop.classList.remove("open");
     });
   }
+
+  // Fullscreen Image Lightbox Listeners
+  const lightboxModal = document.getElementById("imageLightbox");
+  const lightboxClose = document.getElementById("lightboxCloseBtn");
+  const lightboxOverlay = document.getElementById("lightboxOverlay");
+  const lightboxPrev = document.getElementById("lightboxPrevBtn");
+  const lightboxNext = document.getElementById("lightboxNextBtn");
+
+  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+  if (lightboxOverlay) lightboxOverlay.addEventListener("click", closeLightbox);
+  if (lightboxPrev) lightboxPrev.addEventListener("click", showPrevLightboxImage);
+  if (lightboxNext) lightboxNext.addEventListener("click", showNextLightboxImage);
+
+  // Global Keyboard shortcuts (Escape to close, Left/Right arrows to browse)
+  document.addEventListener("keydown", (e) => {
+    if (lightboxModal && lightboxModal.classList.contains("active")) {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showPrevLightboxImage();
+      if (e.key === "ArrowRight") showNextLightboxImage();
+    } else if (modalBackdrop && modalBackdrop.classList.contains("open")) {
+      if (e.key === "Escape") modalBackdrop.classList.remove("open");
+    }
+  });
+
+  // Touch Swipe navigation on mobile for Lightbox
+  if (lightboxModal) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightboxModal.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeDistance = touchEndX - touchStartX;
+      if (Math.abs(swipeDistance) > 45) {
+        if (swipeDistance > 0) {
+          showPrevLightboxImage();
+        } else {
+          showNextLightboxImage();
+        }
+      }
+    }, { passive: true });
+  }
 }
 
 function renderCatalog() {
@@ -297,12 +342,17 @@ function renderCatalog() {
     const isInCart = cart.some(c => c.id === item.id);
     return `
       <article class="orchid-card" data-id="${item.id}">
-        <div class="card-img-wrap">
-          <img src="${item.image}" alt="${item.name}" class="card-img" loading="lazy">
+        <div class="card-img-wrap" onclick="openLightboxFromCatalog('${item.id}')" title="Click to view full photo">
+          <img src="${item.image}" alt="${item.name}" class="card-img expandable-img" loading="lazy">
           <span class="card-badge-status">${item.statusBadge}</span>
-          <button class="card-quickview-btn" onclick="openQuickView('${item.id}')" title="Quick View" aria-label="Quick View of ${item.name}">
-            <i class="fa-solid fa-eye"></i>
-          </button>
+          <div class="card-action-btns">
+            <button class="card-zoom-btn" onclick="event.stopPropagation(); openLightboxFromCatalog('${item.id}')" title="Full Screen View" aria-label="Full screen view of ${item.name}">
+              <i class="fa-solid fa-expand"></i>
+            </button>
+            <button class="card-quickview-btn" onclick="event.stopPropagation(); openQuickView('${item.id}')" title="Quick Details" aria-label="Quick Details of ${item.name}">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+          </div>
         </div>
         <div class="card-body">
           <span class="card-cat-label">${item.category.toUpperCase()}</span>
@@ -340,8 +390,11 @@ window.openQuickView = function(id) {
   if (!backdrop || !modalContent) return;
 
   modalContent.innerHTML = `
-    <div class="modal-img-col">
-      <img src="${item.image}" alt="${item.name}" class="modal-img">
+    <div class="modal-img-col" onclick="openLightboxFromCatalog('${item.id}')" style="cursor: zoom-in;" title="Click for fullscreen view">
+      <img src="${item.image}" alt="${item.name}" class="modal-img expandable-img">
+      <div style="text-align: center; margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">
+        <i class="fa-solid fa-expand"></i> Click photo for full screen
+      </div>
     </div>
     <div class="modal-details-col">
       <span class="section-tag">${item.category.toUpperCase()}</span>
@@ -518,3 +571,162 @@ function handleWhatsAppSubmit() {
   const encodedUrl = `https://wa.me/${NURSERY_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
   window.open(encodedUrl, "_blank");
 }
+
+// ==========================================================================
+// Fullscreen Lightbox / Expandable Image Viewer (YogaParvati Style)
+// ==========================================================================
+
+const GALLERY_PHOTOS = [
+  {
+    image: "assets/images/nursery/greenhouse_backdrop.jpg",
+    title: "Chathari Greenhouse Canopy & Shade Benches",
+    desc: "Our high-density shade house overlooking historic Tripunithura with healthy root systems and flourishing cutflower benches."
+  },
+  {
+    image: "assets/images/nursery/dendrobium_burana_green.jpg",
+    title: "Dendrobium Burana Green Apple",
+    desc: "Exotic lime-green petals with a delicate pastel blush throat, photographed fresh in our Chathari nursery."
+  },
+  {
+    image: "assets/images/nursery/dendrobium_snow_purple.jpg",
+    title: "Dendrobium Sonia White Crystal",
+    desc: "Crystalline white sprays with an intense fuchsia lip, thriving under Kerala shade netting."
+  },
+  {
+    image: "assets/images/nursery/dendrobium_antelope_twist.jpg",
+    title: "Dendrobium Antelope Violet Twist",
+    desc: "Rare antelope spatulata orchid featuring spiral corkscrew petals in royal amethyst tones."
+  },
+  {
+    image: "assets/images/nursery/dendrobium_pink_splash.jpg",
+    title: "Dendrobium Pink Splash / Candy Stripe",
+    desc: "Artistic two-tone flare blooms with strong humidity tolerance for Kerala home gardens."
+  },
+  {
+    image: "assets/images/nursery/mother_desk.jpg",
+    title: "Warm Hospitality & Order Dispatch",
+    desc: "The Founder counseling visiting garden enthusiasts and preparing pristine potted orchids at Orchid Haven."
+  }
+];
+
+let currentLightboxList = [];
+let currentLightboxIndex = 0;
+
+function openLightbox(list, startIndex = 0) {
+  if (!list || list.length === 0) return;
+  currentLightboxList = list;
+  currentLightboxIndex = Math.max(0, Math.min(startIndex, list.length - 1));
+
+  const modal = document.getElementById("imageLightbox");
+  if (!modal) return;
+
+  updateLightboxContent();
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden"; // Prevent page background scrolling
+}
+
+function updateLightboxContent() {
+  const item = currentLightboxList[currentLightboxIndex];
+  if (!item) return;
+
+  const img = document.getElementById("lightboxImage");
+  const title = document.getElementById("lightboxTitle");
+  const desc = document.getElementById("lightboxDesc");
+  const counter = document.getElementById("lightboxCounter");
+  const prevBtn = document.getElementById("lightboxPrevBtn");
+  const nextBtn = document.getElementById("lightboxNextBtn");
+
+  if (img) {
+    img.style.opacity = "0.3";
+    img.style.transform = "scale(0.96)";
+    img.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+    
+    const tempImg = new Image();
+    tempImg.src = item.image;
+    tempImg.onload = () => {
+      img.src = item.image;
+      img.alt = item.title || item.name || "Orchid Haven Nursery";
+      img.style.opacity = "1";
+      img.style.transform = "scale(1)";
+    };
+  }
+
+  if (title) title.textContent = item.title || item.name || "";
+  if (desc) desc.textContent = item.desc || item.description || item.botanical || "";
+  
+  if (counter) {
+    if (currentLightboxList.length > 1) {
+      counter.textContent = `${currentLightboxIndex + 1} / ${currentLightboxList.length}`;
+      counter.style.display = "inline-block";
+    } else {
+      counter.style.display = "none";
+    }
+  }
+
+  if (prevBtn && nextBtn) {
+    const showNav = currentLightboxList.length > 1;
+    prevBtn.style.display = showNav ? "flex" : "none";
+    nextBtn.style.display = showNav ? "flex" : "none";
+  }
+}
+
+function closeLightbox() {
+  const modal = document.getElementById("imageLightbox");
+  if (!modal) return;
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+function showPrevLightboxImage() {
+  if (currentLightboxList.length <= 1) return;
+  currentLightboxIndex = (currentLightboxIndex - 1 + currentLightboxList.length) % currentLightboxList.length;
+  updateLightboxContent();
+}
+
+function showNextLightboxImage() {
+  if (currentLightboxList.length <= 1) return;
+  currentLightboxIndex = (currentLightboxIndex + 1) % currentLightboxList.length;
+  updateLightboxContent();
+}
+
+window.openGalleryLightbox = function(index) {
+  openLightbox(GALLERY_PHOTOS, index);
+};
+
+window.openFounderLightbox = function(who) {
+  const founderPhotos = [
+    {
+      image: "assets/images/nursery/mother_kasavu.jpg",
+      title: "The Founder & Visionary Brain",
+      desc: "Retd. Higher Grade Assistant (HGA), LIC of India. The strategic intellect, botanical curator, and soul of Orchid Haven Nursery."
+    },
+    {
+      image: "assets/images/nursery/father_sivadasan.jpg",
+      title: "Sri Sivadasan A.K. — Co-Founder & Chief Handyman",
+      desc: "Retd. Assistant Manager (Finance & Accounts), Kochi Refinery. The master builder and physical craftsman creating the benches and shade structures at Orchid Haven."
+    }
+  ];
+  const idx = who === 'father' ? 1 : 0;
+  openLightbox(founderPhotos, idx);
+};
+
+window.openLightboxFromCatalog = function(itemId) {
+  const catalogList = ORCHID_CATALOG.map(item => ({
+    image: item.image,
+    title: item.name,
+    desc: `${item.botanical} • ₹${item.price} • ${item.statusBadge} — ${item.description}`
+  }));
+  const idx = ORCHID_CATALOG.findIndex(i => i.id === itemId);
+  openLightbox(catalogList, idx >= 0 ? idx : 0);
+};
+
+window.openLightboxManual = function(imgSrc, titleText, descText) {
+  openLightbox([{
+    image: imgSrc,
+    title: titleText,
+    desc: descText
+  }], 0);
+};
+
