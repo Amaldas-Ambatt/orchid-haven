@@ -627,7 +627,7 @@ const GALLERY_PHOTOS = [
   {
     image: "assets/images/nursery/mother_desk.jpg",
     title: "Warm Hospitality & Order Dispatch",
-    desc: "The Founder counseling visiting garden enthusiasts and preparing pristine potted orchids at Orchid Haven."
+    desc: "Smt. Deepa A.N. counseling visiting garden enthusiasts and preparing pristine potted orchids at Orchid Haven."
   }
 ];
 
@@ -721,8 +721,8 @@ window.openFounderLightbox = function(who) {
   const founderPhotos = [
     {
       image: "assets/images/nursery/mother_kasavu.jpg",
-      title: "The Founder & Visionary Brain",
-      desc: "Retd. Higher Grade Assistant (HGA), LIC of India. The strategic intellect, botanical curator, and soul of Orchid Haven Nursery."
+      title: "Smt. Deepa A.N. — Founder & The Brain",
+      desc: "Retd. Higher Grade Assistant (HGA), LIC of India. Conceived, planned, and founded Orchid Haven Nursery with visionary botanical curation and strategic intellect."
     },
     {
       image: "assets/images/nursery/father_sivadasan.jpg",
