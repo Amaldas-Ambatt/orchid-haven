@@ -11,15 +11,15 @@ A modern, botanical-luxury website crafted for **Orchid Haven Nursery** (`@orchi
    - Location: **📍 Chathari, Tripunithura, Ernakulam, Kerala (PIN: 682301)**
    - Instagram: [@orchid.haven_nursery](https://www.instagram.com/orchid.haven_nursery/)
    - WhatsApp / Phone: **+91 94958 19173**
-   - Founders: **Mother (Founder & Visionary Brain, Retd. Higher Grade Assistant - HGA, LIC of India)** and **Sri Sivadasan A.K. (Co-Founder & Chief Handyman, Retd. Assistant Manager - Finance & Accounts, Kochi Refinery)**
+   - Founders: **The Founder & Visionary Brain (Retd. Higher Grade Assistant - HGA, LIC of India)** and **Sri Sivadasan A.K. (Co-Founder & Operations Lead / Handyman, Retd. Assistant Manager - Finance & Accounts, Kochi Refinery)**
 2. **Authentic Orchid Catalog**:
    - Filter by popular varieties (*Dendrobiums*, *Vandas*, *Phalaenopsis*, *Substrates*).
    - Real-time search & price sorting.
-   - Real photos of parents' blooms (*Burana Green Apple*, *Royal Purple Velvet*, *Pink Splash*, *Sunset Burgundy*, *Pastel Lilac*, *Sonia White Crystal*, *Antelope Violet Twist*).
+   - Real photos of Orchid Haven blooms (*Burana Green Apple*, *Royal Purple Velvet*, *Pink Splash*, *Sunset Burgundy*, *Pastel Lilac*, *Sonia White Crystal*, *Antelope Violet Twist*).
    - Quick-view modals with detailed botanical specs.
 3. **Integrated WhatsApp Order & Enquiry Drawer**:
    - Customers can add multiple plants to their basket.
-   - Generates an instant, pre-formatted WhatsApp message link with items, estimated prices, and delivery location sent directly to parents' phone (+91 94958 19173).
+   - Generates an instant, pre-formatted WhatsApp message link with items, estimated prices, and delivery location sent directly to the nursery (+91 94958 19173).
 4. **Greenhouse Video Tour**:
    - Embedded video player of the actual shade house in Chathari.
 5. **Kerala Climate Orchid Care Guide**:

@@ -14,7 +14,7 @@ const NURSERY_CONFIG = {
   email: "orchidhaven.kerala@gmail.com"
 };
 
-// Authentic Orchid Catalog Data using real photos from parents' nursery
+// Authentic Orchid Catalog Data from Orchid Haven Nursery
 const ORCHID_CATALOG = [
   {
     id: "dend-real-01",
