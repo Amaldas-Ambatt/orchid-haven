@@ -11,7 +11,7 @@ A modern, botanical-luxury website crafted for **Orchid Haven Nursery** (`@orchi
    - Location: **📍 Chathari, Tripunithura, Ernakulam, Kerala (PIN: 682301)**
    - Instagram: [@orchid.haven_nursery](https://www.instagram.com/orchid.haven_nursery/)
    - WhatsApp / Phone: **+91 94958 19173**
-   - Founders: **Mother (Founder & Visionary Brain, retired from LIC of India)** and **Sri Sivadasan A.K. (Co-Founder & Chief Handyman, retired from Kochi Refinery)**
+   - Founders: **Mother (Founder & Visionary Brain, Retd. Higher Grade Assistant - HGA, LIC of India)** and **Sri Sivadasan A.K. (Co-Founder & Chief Handyman, Retd. Assistant Manager - Finance & Accounts, Kochi Refinery)**
 2. **Authentic Orchid Catalog**:
    - Filter by popular varieties (*Dendrobiums*, *Vandas*, *Phalaenopsis*, *Substrates*).
    - Real-time search & price sorting.
