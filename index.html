@@ -254,7 +254,11 @@
         </p>
       </div>
 
-      <div class="video-showcase-frame">
+      <div class="video-cinema-card video-showcase-frame">
+        <div class="video-cinema-header">
+          <span class="video-live-dot" aria-hidden="true"></span>
+          <span class="video-cinema-title">Chathari High-Density Shade House • Live Walkthrough</span>
+        </div>
         <video controls playsinline preload="metadata" class="video-showcase-player">
           <source src="assets/images/nursery/greenhouse_tour.mp4" type="video/mp4">
           Your browser does not support the video tag.
@@ -670,19 +674,21 @@
     </div>
   </section>
 
-  <!-- Mobile Floating Quick Enquiry Bar (Mirroring Cart State) -->
-  <aside class="mobile-floating-bar" id="mobileFloatingBar" aria-label="Mobile Enquiry Basket Bar">
-    <button class="mobile-floating-btn" id="mobileFloatingCartBtn" aria-label="Open Orchid Enquiry Basket">
-      <div class="mobile-floating-icon-wrap">
-        <i class="fa-solid fa-basket-shopping"></i>
-        <span class="mobile-cart-badge" id="mobileCartBadge">0</span>
+  <!-- Mobile Sticky Floating Quick Enquiry Bar (Whenever cart >= 1) -->
+  <aside class="mobile-floating-bar" id="mobileFloatingCartBar" aria-label="Mobile Enquiry Basket Bar">
+    <div class="mobile-floating-pill" id="mobileFloatingCartBtn" role="button" tabindex="0" aria-label="Open Orchid Enquiry Basket">
+      <div class="mobile-floating-content">
+        <div class="mobile-floating-icon-wrap">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="mobile-cart-badge" id="mobileCartBadge">0</span>
+        </div>
+        <div class="mobile-floating-info">
+          <span class="mobile-floating-text" id="mobileFloatingText">🌱 0 Plants in Enquiry Basket • ₹0</span>
+          <span class="mobile-floating-total" id="mobileFloatingTotal" style="display: none;">View Plants</span>
+        </div>
       </div>
-      <div class="mobile-floating-info">
-        <span class="mobile-floating-title">Enquiry Basket</span>
-        <span class="mobile-floating-total" id="mobileFloatingTotal">View Plants</span>
-      </div>
-      <span class="mobile-floating-action">Review &rarr;</span>
-    </button>
+      <span class="mobile-floating-cta">View & WhatsApp &rarr;</span>
+    </div>
   </aside>
 
   <!-- Slide-over WhatsApp Enquiry Drawer -->

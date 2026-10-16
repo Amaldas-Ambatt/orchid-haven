@@ -179,9 +179,73 @@ document.addEventListener("DOMContentLoaded", () => {
   initEventListeners();
   renderCatalog();
   updateCartUI();
+  initScrollReveal();
 });
 
+// Scroll Reveal Micro-Animations (Respecting prefers-reduced-motion)
+let scrollRevealObserver = null;
+
+function initScrollReveal() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const elementsToReveal = document.querySelectorAll(
+    ".section-tag, .section-title, .section-subtitle, .hero-stats-grid, .highlight-box, .care-card, .founder-card, .gallery-card, .visit-card, .video-cinema-card"
+  );
+
+  elementsToReveal.forEach(el => el.classList.add("reveal-on-scroll"));
+
+  if ("IntersectionObserver" in window) {
+    scrollRevealObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: "0px 0px -40px 0px",
+      threshold: 0.1
+    });
+
+    elementsToReveal.forEach(el => scrollRevealObserver.observe(el));
+  } else {
+    elementsToReveal.forEach(el => el.classList.add("revealed"));
+  }
+}
+
+function observeCatalogCards() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const cards = document.querySelectorAll(".orchid-card:not(.revealed)");
+  cards.forEach(card => {
+    card.classList.add("reveal-on-scroll");
+    if (scrollRevealObserver) {
+      scrollRevealObserver.observe(card);
+    } else {
+      card.classList.add("revealed");
+    }
+  });
+}
+
 function initEventListeners() {
+  // Sticky Header Scroll State
+  const siteHeader = document.getElementById("siteHeader");
+  if (siteHeader) {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        siteHeader.classList.add("scrolled");
+      } else {
+        siteHeader.classList.remove("scrolled");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+  }
+
   // Mobile Nav Toggle
   const mobileBtn = document.getElementById("mobileMenuBtn");
   const navMenu = document.getElementById("navMenu");
@@ -358,12 +422,13 @@ function renderCatalog() {
         </div>
         <div class="card-body">
           <span class="card-cat-label">${item.category.toUpperCase()}</span>
-          <h3 class="card-title">${item.name}</h3>
+          <h3 class="card-title clickable-title" onclick="openQuickView('${item.id}')" role="button" tabindex="0" title="Click to view full specs of ${item.name}">${item.name}</h3>
           <p class="card-scientific">${item.botanical}</p>
           
           <div class="card-meta-chips">
             <span class="meta-chip"><i class="fa-solid fa-sun"></i> ${item.sunlight}</span>
             <span class="meta-chip"><i class="fa-solid fa-droplet"></i> ${item.watering.split('(')[0]}</span>
+            <span class="meta-chip meta-chip-bloom"><i class="fa-solid fa-clock"></i> ${item.bloomDuration}</span>
           </div>
 
           <div class="card-footer">
@@ -380,6 +445,11 @@ function renderCatalog() {
       </article>
     `;
   }).join("");
+
+  // Re-observe newly rendered cards for smooth scroll reveal
+  if (typeof observeCatalogCards === "function") {
+    observeCatalogCards();
+  }
 }
 
 // Quick View Modal
@@ -392,39 +462,39 @@ window.openQuickView = function(id) {
   if (!backdrop || !modalContent) return;
 
   modalContent.innerHTML = `
-    <div class="modal-img-col" onclick="openLightboxFromCatalog('${item.id}')" style="cursor: zoom-in;" title="Click for fullscreen view">
+    <div class="modal-img-col" onclick="openLightboxFromCatalog('${item.id}')" title="Click photo for fullscreen view">
       <img src="${item.image}" alt="${item.name}" class="modal-img expandable-img">
-      <div style="text-align: center; margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); cursor: pointer;">
+      <div class="modal-img-hint">
         <i class="fa-solid fa-expand"></i> Click photo for full screen
       </div>
     </div>
     <div class="modal-details-col">
-      <span class="section-tag">${item.category.toUpperCase()}</span>
-      <h2 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 4px;">${item.name}</h2>
-      <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1.2rem;">${item.botanical}</p>
+      <span class="modal-category-tag">${item.category.toUpperCase()}</span>
+      <h2 class="modal-title">${item.name}</h2>
+      <p class="modal-botanical">${item.botanical}</p>
       
-      <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary); margin-bottom: 1.2rem;">
-        ₹${item.price} <span style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted);">/ potted plant</span>
+      <div class="modal-price-row">
+        ₹${item.price} <span class="modal-price-sub">/ potted plant</span>
       </div>
 
-      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.5rem;">
+      <p class="modal-desc">
         ${item.description}
       </p>
 
-      <div style="background: var(--surface-alt); padding: 1.2rem; border-radius: var(--radius-sm); margin-bottom: 1.8rem;">
-        <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; color: var(--primary-accent);">
+      <div class="modal-specs-box">
+        <h4 class="modal-specs-title">
           <i class="fa-solid fa-leaf"></i> Growing Specifications in Kerala:
         </h4>
-        <ul style="list-style: none; font-size: 0.88rem; color: var(--text-dark); display: flex; flex-direction: column; gap: 6px;">
-          <li><strong>Sunlight:</strong> ${item.sunlight}</li>
-          <li><strong>Watering:</strong> ${item.watering}</li>
-          <li><strong>Substrate:</strong> ${item.potting}</li>
-          <li><strong>Flowering Longevity:</strong> ${item.bloomDuration}</li>
+        <ul class="modal-specs-list">
+          <li><strong>Sunlight:</strong> <span>${item.sunlight}</span></li>
+          <li><strong>Watering:</strong> <span>${item.watering}</span></li>
+          <li><strong>Substrate:</strong> <span>${item.potting}</span></li>
+          <li><strong>Flowering Longevity:</strong> <span>${item.bloomDuration}</span></li>
         </ul>
       </div>
 
-      <div style="margin-top: auto; display: flex; gap: 1rem;">
-        <button class="btn-primary" style="flex: 1; justify-content: center;" onclick="addToCartAndOpen('${item.id}')">
+      <div class="modal-cta-row">
+        <button class="btn-primary" onclick="addToCartAndOpen('${item.id}')">
           <i class="fa-brands fa-whatsapp"></i> Add & Enquire
         </button>
       </div>
@@ -505,8 +575,9 @@ function updateCartUI() {
   const totalDisplay = document.getElementById("drawerTotalPrice");
 
   const mobileBadge = document.getElementById("mobileCartBadge");
-  const mobileBar = document.getElementById("mobileFloatingBar");
+  const mobileBar = document.getElementById("mobileFloatingCartBar") || document.getElementById("mobileFloatingBar");
   const mobileTotal = document.getElementById("mobileFloatingTotal");
+  const mobileText = document.getElementById("mobileFloatingText");
 
   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
@@ -522,6 +593,10 @@ function updateCartUI() {
 
   if (mobileTotal) {
     mobileTotal.textContent = totalItems > 0 ? `₹${totalPrice.toLocaleString("en-IN")}` : "View Plants";
+  }
+
+  if (mobileText) {
+    mobileText.innerHTML = `🌱 <strong>${totalItems}</strong> ${totalItems === 1 ? 'Plant' : 'Plants'} in Enquiry Basket • <strong>₹${totalPrice.toLocaleString("en-IN")}</strong>`;
   }
 
   if (mobileBar) {
@@ -552,11 +627,11 @@ function updateCartUI() {
           <div class="drawer-item-price">₹${item.price} each</div>
         </div>
         <div class="drawer-qty-controls">
-          <button class="qty-btn" onclick="updateQty('${item.id}', -1)">-</button>
+          <button class="qty-btn" onclick="updateQty('${item.id}', -1)" aria-label="Decrease quantity">-</button>
           <span class="qty-val">${item.qty}</span>
-          <button class="qty-btn" onclick="updateQty('${item.id}', 1)">+</button>
+          <button class="qty-btn" onclick="updateQty('${item.id}', 1)" aria-label="Increase quantity">+</button>
         </div>
-        <button class="drawer-remove-item" onclick="removeFromCart('${item.id}')" title="Remove">
+        <button class="drawer-remove-item" onclick="removeFromCart('${item.id}')" title="Remove" aria-label="Remove ${item.name} from basket">
           <i class="fa-solid fa-trash-can"></i>
         </button>
       </div>
@@ -579,7 +654,7 @@ function handleWhatsAppSubmit() {
   message += `*MY PLANT ENQUIRY LIST:*\n`;
 
   cart.forEach((item, index) => {
-    message += `${index + 1}. *${item.name}* (Qty: ${item.qty}) - ₹${item.price * item.qty}\n`;
+    message += `${index + 1}. *${item.name}* (Qty: ${item.qty}) - ₹${(item.price * item.qty).toLocaleString("en-IN")}\n`;
   });
 
   message += `\n*Total Plants:* ${totalItems}`;
