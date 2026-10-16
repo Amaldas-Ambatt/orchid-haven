@@ -1,24 +1,28 @@
-# 🌺 Malabar Orchid Flora & Nursery — Kerala, India
+# 🌺 Orchid Haven Nursery — Chathari, Tripunithura, Kerala
 
-A modern, responsive, botanical-luxury website crafted for an authentic family-run orchid nursery in Kerala, India.
+A modern, botanical-luxury website crafted for **Orchid Haven Nursery** (`@orchid.haven_nursery`), a family-run orchid haven in **Chathari, Tripunithura, Kerala, India**, officially recognized under the **State Horticulture Mission (MIDH 2026-27, Krishibhavan Tripunithura)**.
 
 ---
 
 ## 🌟 Key Features
 
-1. **Botanical Luxury Design**: Deep emerald green, rich tropical accents, and gold styling with smooth responsive typography.
-2. **Interactive Orchid Catalog**:
-   - Filter by popular varieties (*Dendrobiums*, *Vandas*, *Phalaenopsis*, *Cattleyas*, and *Substrates*).
-   - Real-time instant search bar & price sorting.
-   - Quick-view popups with detailed botanical specs and Kerala climate care instructions.
+1. **Brand Identity**:
+   - Nursery: **Orchid Haven Nursery**
+   - Location: **📍 Chathari, Tripunithura, Ernakulam, Kerala (PIN: 682301)**
+   - Instagram: [@orchid.haven_nursery](https://www.instagram.com/orchid.haven_nursery/)
+   - Founder: **Sri Sivadasan A.K.**
+2. **Authentic Orchid Catalog**:
+   - Filter by popular varieties (*Dendrobiums*, *Vandas*, *Phalaenopsis*, *Substrates*).
+   - Real-time search & price sorting.
+   - Real photos of parents' blooms (*Burana Green Apple*, *Royal Purple Velvet*, *Pink Splash*, *Sunset Burgundy*, *Pastel Lilac*).
+   - Quick-view modals with detailed botanical specs.
 3. **Integrated WhatsApp Order & Enquiry Drawer**:
    - Customers can add multiple plants to their basket.
-   - Generates an instant, pre-formatted WhatsApp message link with items, estimated prices, and delivery location to send directly to your parents!
-   - Works seamlessly on Android, iPhone, and desktop browsers without any payment gateway or backend server required.
-4. **Kerala Climate Orchid Care Guide**:
-   - Specific advice on shade netting (50-70%), monsoon drainage, potting in charcoal and coconut husk chunks, and NPK fertilizer cycles.
-5. **Nursery Story & Visiting Guide**:
-   - Highlighting parents' passion, climate acclimation, visiting hours, and courier/parcel dispatch across Kerala & Pan-India.
+   - Generates an instant, pre-formatted WhatsApp message link with items, estimated prices, and delivery location sent directly to parents' phone.
+4. **Greenhouse Video Tour**:
+   - Embedded video player of the actual shade house in Chathari.
+5. **Kerala Climate Orchid Care Guide**:
+   - 50–70% green shade nets, monsoon vs summer watering, potting in charcoal and coconut husk chunks, and NPK fertilizer cycles.
 
 ---
 
@@ -30,15 +34,17 @@ Orchid Nursery/
 ├── css/
 │   └── style.css              # Custom styling, animations & theme
 ├── js/
-│   └── app.js                 # Catalog database, filters & WhatsApp logic
+│   └── app.js                 # Catalog database, filters, WhatsApp & Instagram config
 ├── assets/
-│   └── images/                # Orchid photos (hero, nursery, varieties)
-│       ├── hero_greenhouse.jpg
-│       ├── dendrobium_sonia.jpg
-│       ├── vanda_coerulea.jpg
-│       ├── phalaenopsis_white.jpg
-│       ├── cattleya_gold.jpg
-│       ├── nursery_story.jpg
+│   └── images/
+│       ├── nursery/           # Real photos and greenhouse tour video
+│       │   ├── sivadasan_greenhouse.jpg
+│       │   ├── greenhouse_tour.mp4
+│       │   ├── dendrobium_purple_velvet.jpg
+│       │   ├── dendrobium_burana_green.jpg
+│       │   ├── dendrobium_pink_splash.jpg
+│       │   ├── dendrobium_burgundy_gold.jpg
+│       │   └── dendrobium_pastel_lilac.jpg
 │       └── care_supplies.jpg
 ├── .gitignore
 └── README.md
@@ -46,62 +52,50 @@ Orchid Nursery/
 
 ---
 
-## 📸 Replacing with Your Parents' Real Photos
+## ⚙️ Updating WhatsApp Phone Number
 
-When you have the pictures of your parents' nursery and orchids ready:
-1. Place your photo files inside `assets/images/`.
-2. Either name them the same as the existing files (e.g. `dendrobium_sonia.jpg`, `nursery_story.jpg`, `hero_greenhouse.jpg`), OR update the file paths inside [js/app.js](file:///Users/amaldasambattuparambilsivadasan/Desktop/Orchid%20Nursery/js/app.js) in the `ORCHID_CATALOG` list!
-
----
-
-## ⚙️ Updating Nursery Details & WhatsApp Number
-
-Open [js/app.js](file:///Users/amaldasambattuparambilsivadasan/Desktop/Orchid%20Nursery/js/app.js) and update the `NURSERY_CONFIG` at the very top:
+Open [js/app.js](file:///Users/amaldasambattuparambilsivadasan/Desktop/Orchid%20Nursery/js/app.js) and update the `whatsappNumber` in `NURSERY_CONFIG` (include `91` country code):
 
 ```javascript
 const NURSERY_CONFIG = {
-  nurseryName: "Your Nursery Name",       // e.g. Sree Orchid Farm
-  location: "Kottayam / Thrissur, Kerala",
-  whatsappNumber: "919876543210",         // Your parents' 10-digit number with '91' prefix
-  contactPhone: "+91 98765 43210",
-  email: "yournursery@gmail.com"
+  nurseryName: "Orchid Haven Nursery",
+  location: "Chathari, Tripunithura, Ernakulam, Kerala",
+  whatsappNumber: "91XXXXXXXXXX", // <-- Put parents' WhatsApp number here
+  contactPhone: "+91 XXXXX XXXXX",
+  instagramUrl: "https://www.instagram.com/orchid.haven_nursery/",
+  instagramHandle: "@orchid.haven_nursery",
+  email: "orchidhaven.kerala@gmail.com"
 };
 ```
-
-You can also update the phone number in [index.html](file:///Users/amaldasambattuparambilsivadasan/Desktop/Orchid%20Nursery/index.html) search for `919876543210`.
 
 ---
 
 ## 🚀 How to Run Locally
 
-You can preview the website immediately:
-- Simply double-click `index.html` to open it in any web browser.
-- Or run a lightweight local server:
-  ```bash
-  python3 -m http.server 8080
-  ```
-  and visit `http://localhost:8080` in your browser.
+Preview immediately:
+- Double-click `index.html` to open it in any web browser.
+- Or visit the local server: `http://localhost:8899`
 
 ---
 
-## 🌐 Pushing to GitHub & Hosting for Free on GitHub Pages
+## 🌐 Pushing to GitHub & Free Hosting (GitHub Pages)
 
-1. **Commit your files**:
+1. **Commit changes**:
    ```bash
    git add .
-   git commit -m "Initial commit of Kerala Orchid Nursery website"
+   git commit -m "Update Orchid Haven branding and Instagram integration"
    ```
 
-2. **Link to your GitHub repository**:
-   - Create a new repository on [GitHub](https://github.com/new) (e.g., `kerala-orchid-nursery`).
+2. **Link to GitHub**:
+   - Create a new repository on [GitHub](https://github.com/new) (e.g. `orchid-haven-nursery`).
    - Run:
      ```bash
-     git remote add origin https://github.com/YOUR_USERNAME/kerala-orchid-nursery.git
+     git remote add origin https://github.com/YOUR_USERNAME/orchid-haven-nursery.git
      git push -u origin main
      ```
 
 3. **Enable Free Website Hosting (GitHub Pages)**:
-   - Go to your GitHub repository **Settings** &rarr; **Pages**.
+   - Go to your repository **Settings** &rarr; **Pages**.
    - Under **Build and deployment** &rarr; **Branch**, select `main` and `/ (root)`, then click **Save**.
-   - In 1 minute, your website will be live worldwide at:  
-     `https://YOUR_USERNAME.github.io/kerala-orchid-nursery/` (no domain purchase needed)!
+   - Your website will immediately be live worldwide at:  
+     `https://YOUR_USERNAME.github.io/orchid-haven-nursery/`

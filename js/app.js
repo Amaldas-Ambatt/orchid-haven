@@ -1,18 +1,20 @@
 /**
- * Kerala Orchid Nursery - Interactive Application Logic
- * Configured with authentic farm data for Sivadasan's Orchid Nursery (Tripunithura, Kerala)
+ * Orchid Haven Nursery - Interactive Application Logic
+ * Location: Chathari, Tripunithura, Kerala
+ * Instagram: @orchid.haven_nursery
  */
 
-// Nursery details (easily updated with parents' exact 10-digit WhatsApp number)
 const NURSERY_CONFIG = {
-  nurseryName: "Sivadasan's Orchid Nursery",
-  location: "Tripunithura, Kochi, Kerala, India (Krishibhavan Unit)",
+  nurseryName: "Orchid Haven Nursery",
+  location: "Chathari, Tripunithura, Ernakulam, Kerala (Krishibhavan Unit)",
   whatsappNumber: "919876543210", // UPDATE with parents' WhatsApp number
   contactPhone: "+91 98765 43210",
-  email: "sivadasan.orchids@gmail.com"
+  instagramUrl: "https://www.instagram.com/orchid.haven_nursery/",
+  instagramHandle: "@orchid.haven_nursery",
+  email: "orchidhaven.kerala@gmail.com"
 };
 
-// Authentic Orchid Catalog Data using real photos from parents' nursery!
+// Authentic Orchid Catalog Data using real photos from parents' nursery
 const ORCHID_CATALOG = [
   {
     id: "dend-real-01",
@@ -27,7 +29,7 @@ const ORCHID_CATALOG = [
     watering: "Daily misting (Every 1-2 days)",
     potting: "Coconut husk chunks & charcoal in perforated pot",
     bloomDuration: "6 to 8 weeks",
-    description: "Grown directly in our Tripunithura shade net nursery. Outstanding deep velvet purple blooms with bright white throat contrast. Very prolific cutflower variety that thrives under Kerala sun."
+    description: "Grown directly in our Chathari, Tripunithura shade net nursery. Outstanding deep velvet purple blooms with bright white throat contrast. Very prolific cutflower variety that thrives under Kerala sun."
   },
   {
     id: "dend-real-02",
@@ -468,7 +470,7 @@ function handleWhatsAppSubmit() {
   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-  let message = `Namaskaram Sivadasan uncle! 🌸 I would like to enquire about orchids from ${NURSERY_CONFIG.nurseryName} (Tripunithura):\n\n`;
+  let message = `Namaskaram! 🌸 I would like to enquire about orchids from ${NURSERY_CONFIG.nurseryName} (@orchid.haven_nursery, Chathari, Tripunithura):\n\n`;
   message += `*MY PLANT ENQUIRY LIST:*\n`;
 
   cart.forEach((item, index) => {
