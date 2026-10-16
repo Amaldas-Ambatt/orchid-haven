@@ -952,7 +952,7 @@ button {
 }
 
 /* ==========================================================================
-   Our Nursery Story / Heritage Section
+   Our Nursery Story / Heritage & Founders Section
    ========================================================================== */
 
 .story-section {
@@ -960,95 +960,176 @@ button {
   background: var(--surface-card);
 }
 
-.story-grid {
+.story-header-wrap {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.founders-dual-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
-.story-img-container {
-  position: relative;
-}
-
-.story-main-img {
-  width: 100%;
+.founder-card {
+  background: var(--surface-light);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  object-fit: cover;
-  max-height: 500px;
-}
-
-.story-floating-badge {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: var(--primary-dark);
-  color: #ffffff;
-  padding: 1.2rem 1.8rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.story-floating-badge i {
-  font-size: 2rem;
-  color: var(--gold-light);
-}
-
-.story-floating-badge h4 {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.story-floating-badge p {
-  font-size: 0.8rem;
-  color: #cbd5e1;
-}
-
-.story-text-content {
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
   display: flex;
   flex-direction: column;
 }
 
-.story-lead {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
+.founder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(46, 125, 88, 0.3);
 }
 
-.story-paragraphs p {
-  font-size: 1rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  line-height: 1.7;
+.founder-img-box {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  background: #edf2ee;
 }
 
-.story-feature-list {
-  margin: 1.5rem 0 2rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+.founder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
 }
 
-.story-feat-item {
-  display: flex;
+.founder-card:hover .founder-img {
+  transform: scale(1.04);
+}
+
+.founder-badge-pill {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(10, 35, 24, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.92rem;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.founder-body {
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.founder-title-row {
+  margin-bottom: 1rem;
+}
+
+.founder-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.founder-role {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-accent);
+  letter-spacing: 1px;
+}
+
+.founder-career-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-dark);
+  background: rgba(46, 125, 88, 0.1);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  margin: 0.5rem 0 1rem 0;
 }
 
-.story-feat-item i {
+.founder-career-tag i {
   color: var(--primary-accent);
-  font-size: 1.1rem;
 }
+
+.founder-bio-text {
+  font-size: 0.96rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.founder-core-values {
+  margin-top: auto;
+  border-top: 1px solid var(--border-light);
+  padding-top: 1rem;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.value-chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-card);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+/* Shared Philosophy Banner */
+.founders-legacy-banner {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+}
+
+.legacy-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.legacy-content p {
+  color: #d1e5db;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 780px;
+}
+
+@media (max-width: 992px) {
+  .founders-dual-grid,
+  .founders-legacy-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ==========================================================================
    Visiting Guide & Location Section
