@@ -1,126 +1,149 @@
 /**
  * Kerala Orchid Nursery - Interactive Application Logic
- * Features:
- * - Dynamic catalog rendering & filtering
- * - Search & sorting
- * - Quick-view modal with botanical specs
- * - WhatsApp live enquiry cart & order message builder
- * - Interactive FAQs and mobile menu
+ * Configured with authentic farm data for Sivadasan's Orchid Nursery (Tripunithura, Kerala)
  */
 
-// Replace this with your parents' actual WhatsApp number (with 91 country code for India)
+// Nursery details (easily updated with parents' exact 10-digit WhatsApp number)
 const NURSERY_CONFIG = {
-  nurseryName: "Malabar Orchid Flora & Nursery",
-  location: "Thrissur / Ernakulam, Kerala, India",
-  whatsappNumber: "919876543210", // UPDATE with actual WhatsApp number
+  nurseryName: "Sivadasan's Orchid Nursery",
+  location: "Tripunithura, Kochi, Kerala, India (Krishibhavan Unit)",
+  whatsappNumber: "919876543210", // UPDATE with parents' WhatsApp number
   contactPhone: "+91 98765 43210",
-  email: "info@keralaorchids.demo"
+  email: "sivadasan.orchids@gmail.com"
 };
 
-// Orchid Catalog Data
+// Authentic Orchid Catalog Data using real photos from parents' nursery!
 const ORCHID_CATALOG = [
   {
-    id: "dend-01",
-    name: "Dendrobium Sonia 'Earsakul'",
-    botanical: "Dendrobium hybrid",
+    id: "dend-real-01",
+    name: "Dendrobium Royal Purple Velvet",
+    botanical: "Dendrobium hybrid (Cutflower Special)",
     category: "dendrobium",
     price: 350,
-    statusBadge: "Top Seller in Kerala",
-    image: "assets/images/dendrobium_sonia.jpg",
+    statusBadge: "Farm Fresh Bloom",
+    image: "assets/images/nursery/dendrobium_purple_velvet.jpg",
     difficulty: "Easy / Beginner",
-    sunlight: "50-60% Shade Net",
+    sunlight: "50-60% Green Net",
     watering: "Daily misting (Every 1-2 days)",
     potting: "Coconut husk chunks & charcoal in perforated pot",
     bloomDuration: "6 to 8 weeks",
-    description: "The crown jewel of Kerala home gardens. Highly resilient, loves tropical humidity, and produces sprays of rich magenta-purple blossoms with pure white throat contrasts."
+    description: "Grown directly in our Tripunithura shade net nursery. Outstanding deep velvet purple blooms with bright white throat contrast. Very prolific cutflower variety that thrives under Kerala sun."
   },
   {
-    id: "vanda-02",
-    name: "Vanda Coerulea 'Blue Orchid'",
+    id: "dend-real-02",
+    name: "Dendrobium Burana Green Apple",
+    botanical: "Dendrobium Burana Jade / Green Apple",
+    category: "dendrobium",
+    price: 380,
+    statusBadge: "Rare Lime Color",
+    image: "assets/images/nursery/dendrobium_burana_green.jpg",
+    difficulty: "Easy",
+    sunlight: "50% Filtered Light",
+    watering: "Every morning",
+    potting: "Charcoal & coconut fiber",
+    bloomDuration: "Up to 8 weeks",
+    description: "Highly sought-after exotic lime-green petals with a delicate pastel throat blush. An absolute showstopper in garden verandahs and sit-outs."
+  },
+  {
+    id: "dend-real-03",
+    name: "Dendrobium Pink Splash / Candy Stripe",
+    botanical: "Dendrobium splash-petal hybrid",
+    category: "dendrobium",
+    price: 360,
+    statusBadge: "Bicolor Bloom",
+    image: "assets/images/nursery/dendrobium_pink_splash.jpg",
+    difficulty: "Beginner Friendly",
+    sunlight: "50-70% Shade Net",
+    watering: "Daily in dry season",
+    potting: "Coconut husk cubes",
+    bloomDuration: "6 to 7 weeks",
+    description: "Artistic two-tone blossoms with vibrant magenta flaring across pure porcelain white petals. Exceptionally resistant to monsoon fungal rot."
+  },
+  {
+    id: "dend-real-04",
+    name: "Dendrobium Sunset Burgundy & Gold",
+    botanical: "Dendrobium hybrid",
+    category: "dendrobium",
+    price: 370,
+    statusBadge: "Rich Tone",
+    image: "assets/images/nursery/dendrobium_burgundy_gold.jpg",
+    difficulty: "Easy",
+    sunlight: "50-60% Light",
+    watering: "Moderate daily misting",
+    potting: "Perforated orchid clay pot",
+    bloomDuration: "5 to 7 weeks",
+    description: "Intense, deep wine-burgundy petals crowned with a glowing amber-gold center. Strong, thick pseudobulbs that produce heavy recurrent flower spikes."
+  },
+  {
+    id: "dend-real-05",
+    name: "Dendrobium Pastel Lilac Breeze",
+    botanical: "Dendrobium hybrid",
+    category: "dendrobium",
+    price: 340,
+    statusBadge: "Sweet Pastel",
+    image: "assets/images/nursery/dendrobium_pastel_lilac.jpg",
+    difficulty: "Very Easy",
+    sunlight: "50-70% Shade Net",
+    watering: "Daily morning watering",
+    potting: "Charcoal & husk mix",
+    bloomDuration: "Up to 7 weeks",
+    description: "Gentle lavender-pink hues fading softly to white. Multi-branching spikes with delicate flowers that stay fresh for weeks in Kerala's warm breeze."
+  },
+  {
+    id: "vanda-06",
+    name: "Vanda Coerulea 'Blue Queen'",
     botanical: "Vanda coerulea Griff. ex Lindl.",
     category: "vanda",
     price: 950,
     statusBadge: "Collector's Choice",
     image: "assets/images/vanda_coerulea.jpg",
     difficulty: "Moderate",
-    sunlight: "Bright Indirect / 50% Shade",
-    watering: "Twice daily root soaking in summer",
+    sunlight: "Bright indirect / 50% Shade",
+    watering: "Twice daily root misting",
     potting: "Hanging wooden slat basket / bare root",
-    bloomDuration: "4 to 6 weeks, multiple times yearly",
-    description: "Famous for its mesmerizing lattice tessellation pattern in royal violet-blue. Thrives with hanging aerial roots in Kerala's warm, humid breeze without soil."
+    bloomDuration: "4 to 6 weeks",
+    description: "Famous for its royal blue tessellated petals and dramatic aerial roots. Needs no potting soil—hangs gracefully in your shaded verandah."
   },
   {
-    id: "phal-03",
+    id: "phal-07",
     name: "Phalaenopsis White Cascade",
     botanical: "Phalaenopsis amabilis hybrid",
     category: "phalaenopsis",
     price: 650,
-    statusBadge: "In Spike",
+    statusBadge: "Indoor Special",
     image: "assets/images/phalaenopsis_white.jpg",
-    difficulty: "Easy Indoor / Verandah",
-    sunlight: "Filtered gentle morning light",
-    watering: "When top moss feels dry (Every 3-4 days)",
-    potting: "Sphagnum moss or coconut chips in transparent pot",
-    bloomDuration: "Up to 3 months",
-    description: "Serene, cascading white moth orchids. Ideal for shaded verandahs, sit-outs, and bright living spaces. Extremely long-lasting flowers that stay fresh for months."
+    difficulty: "Easy Shaded",
+    sunlight: "Gentle indirect light / Verandah",
+    watering: "When substrate is dry (Every 3-4 days)",
+    potting: "Sphagnum moss or coconut chips in clear pot",
+    bloomDuration: "Up to 12 weeks",
+    description: "Classic cascading white moth orchid. Magnificent blooms that last up to 3 months indoors near a bright window or shaded Kerala verandah."
   },
   {
-    id: "catt-04",
-    name: "Cattleya Queen 'Sunset Gold'",
-    botanical: "Cattleya hybrid",
-    category: "cattleya",
-    price: 850,
-    statusBadge: "Sweet Fragrance",
-    image: "assets/images/cattleya_gold.jpg",
-    difficulty: "Moderate",
-    sunlight: "Bright filtered sunlight",
-    watering: "Allow medium to dry slightly between watering",
-    potting: "Coarse bark & charcoal chips",
-    bloomDuration: "3 to 5 weeks",
-    description: "The 'Queen of Orchids' featuring immense, velvety blooms in radiant sunrise golds and fiery reds. Emits a rich, intoxicating floral perfume in the morning hours."
-  },
-  {
-    id: "dend-05",
-    name: "Dendrobium Emma White",
-    botanical: "Dendrobium Emma White",
-    category: "dendrobium",
-    price: 320,
-    statusBadge: "Heavy Bloomer",
-    image: "assets/images/hero_greenhouse.jpg",
-    difficulty: "Very Easy",
-    sunlight: "50-70% Shade Net",
-    watering: "Daily in dry season",
-    potting: "Coconut husk chunks",
-    bloomDuration: "Up to 8 weeks",
-    description: "Pure alabaster white blooms that form dense, multiple spikes simultaneously. Outstanding heat tolerance and exceptionally prolific bloomer under Kerala monsoons."
-  },
-  {
-    id: "supp-06",
-    name: "Kerala Orchid Potting & Bloom Care Kit",
-    botanical: "Horticultural grade orchid substrate & feed",
+    id: "supp-08",
+    name: "Kerala Orchid Potting & Bloom Kit",
+    botanical: "Substrate & Micronutrient Mix",
     category: "supplies",
     price: 280,
-    statusBadge: "Essential Care",
+    statusBadge: "Care Essential",
     image: "assets/images/care_supplies.jpg",
     difficulty: "Ready to use",
     sunlight: "N/A",
     watering: "Use during re-potting",
-    potting: "Pre-treated coconut chunks, washed charcoal, slow-release NPK",
+    potting: "Treated coconut chips, graded charcoal, bio-fungicide, slow-release NPK",
     bloomDuration: "Long-term root health",
-    description: "Hand-curated substrate blend specially treated to prevent fungal rot during heavy rains. Includes steamed coconut husk chips, activated charcoal chunks, and bloom-booster micronutrients."
+    description: "Hand-curated substrate blend specially treated to prevent root rot during heavy Kerala monsoons. Includes chunky charcoal, washed husk, and bloom-booster feed."
   }
 ];
 
-// State
+// State Management
 let currentCategory = "all";
 let searchQuery = "";
 let sortBy = "featured";
 let cart = JSON.parse(localStorage.getItem("kerala_orchid_cart") || "[]");
 
-// DOM Elements
+// DOM Initialization
 document.addEventListener("DOMContentLoaded", () => {
-  initCatalog();
-  initCart();
   initEventListeners();
   renderCatalog();
   updateCartUI();
@@ -140,7 +163,7 @@ function initEventListeners() {
     });
   }
 
-  // Category Buttons
+  // Category Filter Buttons
   const catButtons = document.querySelectorAll(".cat-btn");
   catButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -187,7 +210,7 @@ function initEventListeners() {
     sendOrderBtn.addEventListener("click", handleWhatsAppSubmit);
   }
 
-  // FAQ Accordions
+  // FAQ Accordion
   const faqItems = document.querySelectorAll(".faq-item");
   faqItems.forEach(item => {
     const question = item.querySelector(".faq-question");
@@ -207,10 +230,6 @@ function initEventListeners() {
       if (e.target === modalBackdrop) modalBackdrop.classList.remove("open");
     });
   }
-}
-
-function initCatalog() {
-  // Initial setup if needed
 }
 
 function renderCatalog() {
@@ -236,7 +255,7 @@ function renderCatalog() {
       <div style="grid-column: 1/-1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
         <i class="fa-solid fa-seedling" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-accent);"></i>
         <h3>No orchids found matching "${searchQuery}"</h3>
-        <p>Try searching for Dendrobium, Vanda, or resetting filters.</p>
+        <p>Try searching for Dendrobium, Vanda, or resetting the category filter.</p>
       </div>
     `;
     return;
@@ -341,10 +360,6 @@ function closeDrawer() {
   document.body.style.overflow = "auto";
 }
 
-function initCart() {
-  // Sync initial cart
-}
-
 window.addToCartAndOpen = function(id) {
   const exists = cart.find(i => i.id === id);
   if (!exists) {
@@ -442,31 +457,31 @@ function updateCartUI() {
   }
 }
 
-// WhatsApp Generator
+// WhatsApp Order Generator
 function handleWhatsAppSubmit() {
   if (cart.length === 0) return;
 
   const customerName = document.getElementById("custName")?.value.trim() || "Orchid Enthusiast";
   const customerPlace = document.getElementById("custPlace")?.value.trim() || "Kerala";
-  const customerNotes = document.getElementById("custNotes")?.value.trim() || "Please confirm plant availability and delivery.";
+  const customerNotes = document.getElementById("custNotes")?.value.trim() || "Please confirm plant availability and delivery options.";
 
   const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
   const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-  let message = `Namaskaram! 🌸 I would like to enquire about orchids from ${NURSERY_CONFIG.nurseryName}:\n\n`;
-  message += `*ORDER / ENQUIRY LIST:*\n`;
+  let message = `Namaskaram Sivadasan uncle! 🌸 I would like to enquire about orchids from ${NURSERY_CONFIG.nurseryName} (Tripunithura):\n\n`;
+  message += `*MY PLANT ENQUIRY LIST:*\n`;
 
   cart.forEach((item, index) => {
     message += `${index + 1}. *${item.name}* (Qty: ${item.qty}) - ₹${item.price * item.qty}\n`;
   });
 
   message += `\n*Total Plants:* ${totalItems}`;
-  message += `\n*Estimated Amount:* ₹${totalPrice.toLocaleString("en-IN")}\n`;
+  message += `\n*Estimated Value:* ₹${totalPrice.toLocaleString("en-IN")}\n`;
   message += `\n*Customer Details:*`;
   message += `\nName: ${customerName}`;
   message += `\nLocation: ${customerPlace}`;
   message += `\nNote: ${customerNotes}`;
-  message += `\n\nCould you please send photos of current blooming spikes and delivery/parcel options? Thank you!`;
+  message += `\n\nCould you please share photos of the current blooming spikes and confirm parcel/pickup options? Thank you!`;
 
   const encodedUrl = `https://wa.me/${NURSERY_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
   window.open(encodedUrl, "_blank");
