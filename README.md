@@ -104,4 +104,28 @@ Preview immediately:
    - Go to your repository **Settings** &rarr; **Pages**.
    - Under **Build and deployment** &rarr; **Branch**, select `main` and `/ (root)`, then click **Save**.
    - Your website will immediately be live worldwide at:  
-     `https://YOUR_USERNAME.github.io/orchid-haven-nursery/`
+     `https://amaldas-ambatt.github.io/orchid-haven/`
+
+---
+
+## 🎯 Custom Domain Checklist (When You Buy a Domain)
+
+When you purchase a custom domain (e.g. `orchidhaven.in`, `orchidhaven.com`):
+
+### 1. In GitHub Repository:
+- Go to **Settings** &rarr; **Pages**.
+- Under **Custom domain**, enter your domain name (e.g., `orchidhaven.in`) and click **Save**.
+- Enable **Enforce HTTPS** (takes ~15 minutes once DNS propagates).
+
+### 2. In Codebase (30-Second Search-and-Replace):
+- Replace `https://amaldas-ambatt.github.io/orchid-haven/` with `https://yourdomain.com/` in:
+  - `index.html` (Canonical link, OpenGraph tags, JSON-LD Schema `@id` & `url`)
+  - `sitemap.xml` (Page, image, and video `<loc>` tags)
+  - `robots.txt` (`Sitemap:` line)
+
+### 3. Connect to Google Search Console:
+- Open [Google Search Console](https://search.google.com/search-console).
+- Select **URL prefix** and enter `https://yourdomain.com/`.
+- Copy the HTML verification meta tag and paste it into `<head>` in `index.html`.
+- Submit `sitemap.xml` under the **Sitemaps** menu.
+
