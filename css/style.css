@@ -1685,6 +1685,73 @@ button {
   line-height: 1.5;
 }
 
+.service-areas-box {
+  margin-top: 1.8rem;
+  padding: 1.2rem 1.4rem;
+  background: var(--surface-alt);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(15, 51, 34, 0.05);
+}
+
+.service-areas-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.service-areas-tag i {
+  color: var(--gold-kasavu);
+}
+
+.service-areas-text {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.service-areas-text strong {
+  color: var(--primary-dark);
+}
+
+.seo-catalog-fallback {
+  grid-column: 1 / -1;
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+}
+
+.seo-catalog-fallback h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.6rem;
+}
+
+.seo-catalog-fallback p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.2rem;
+}
+
+.seo-catalog-fallback ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
+  list-style: square;
+  padding-left: 1.2rem;
+  font-size: 0.88rem;
+}
+
 /* Standout Botanical Card */
 .visit-interactive-box {
   background: linear-gradient(135deg, #092418 0%, #15452E 100%);

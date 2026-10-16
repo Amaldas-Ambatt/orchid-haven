@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://amaldas-ambatt.github.io/orchid-haven/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Key Nursery & Specimen Images -->
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/greenhouse_backdrop.jpg</image:loc>
+      <image:title>Orchid Haven Shade House in Chathari Tripunithura Kochi</image:title>
+      <image:caption>High-density tropical orchid nursery canopy and misting bench infrastructure in Tripunithura, Kochi, Kerala.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_purple_velvet.jpg</image:loc>
+      <image:title>Dendrobium Royal Purple Velvet Orchid Kochi</image:title>
+      <image:caption>Hardy purple cutflower Dendrobium blooming at Orchid Haven Nursery in Tripunithura, Ernakulam, Kerala.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_burana_green.jpg</image:loc>
+      <image:title>Dendrobium Burana Green Apple Orchid Kerala</image:title>
+      <image:caption>Exotic lime-green Dendrobium orchid variety nurtured in Tripunithura shade houses.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_pink_splash.jpg</image:loc>
+      <image:title>Dendrobium Pink Splash Two-Tone Orchid</image:title>
+      <image:caption>Bicolor pink splash Dendrobium with high monsoon fungal resistance for Kerala gardens.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_burgundy_gold.jpg</image:loc>
+      <image:title>Dendrobium Sunset Burgundy and Gold</image:title>
+      <image:caption>Deep wine burgundy orchid blooms with glowing amber centers.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_pastel_lilac.jpg</image:loc>
+      <image:title>Dendrobium Pastel Lilac Breeze Orchid</image:title>
+      <image:caption>Delicate lavender-pink sprays of Dendrobium orchids at Orchid Haven.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_snow_purple.jpg</image:loc>
+      <image:title>Dendrobium Sonia White Crystal Orchid</image:title>
+      <image:caption>Crystalline white petals with fuchsia throat, floriferous cutflower orchid in Tripunithura.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/dendrobium_antelope_twist.jpg</image:loc>
+      <image:title>Dendrobium Antelope Violet Twist Orchid</image:title>
+      <image:caption>Twisted antelope-horn petals in amethyst violet, exotic orchid specimen.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/vanda_coerulea.jpg</image:loc>
+      <image:title>Vanda Coerulea Blue Queen Orchid Kochi</image:title>
+      <image:caption>Collector royal blue Vanda orchid with hanging aerial root systems.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/phalaenopsis_white.jpg</image:loc>
+      <image:title>Phalaenopsis White Cascade Moth Orchid</image:title>
+      <image:caption>Indoor and shaded verandah white Phalaenopsis orchid in Kerala.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/care_supplies.jpg</image:loc>
+      <image:title>Kerala Orchid Potting Substrate and Fertilizer Kit</image:title>
+      <image:caption>Treated coconut chips, graded charcoal, and bio-fungicide orchid potting mix.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/mother_kasavu.jpg</image:loc>
+      <image:title>Smt. Deepa A.N. - Founder of Orchid Haven Nursery</image:title>
+      <image:caption>Founder and Visionary Brain (Retd. HGA, LIC of India) at Orchid Haven Nursery Tripunithura.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/father_sivadasan.jpg</image:loc>
+      <image:title>Sri Sivadasan A.K. - Co-Founder and Chief Handyman</image:title>
+      <image:caption>Co-Founder and Operations Lead (Retd. Asst. Manager F and A, Kochi Refinery) at Orchid Haven Nursery.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/mother_desk.jpg</image:loc>
+      <image:title>Orchid Haven Customer Hospitality and Plant Dispatch</image:title>
+      <image:caption>Smt. Deepa A.N. greeting garden lovers and preparing orchid orders at Orchid Haven in Chathari.</image:caption>
+    </image:image>
+
+    <!-- Video Sitemap Entry -->
+    <video:video>
+      <video:thumbnail_loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/greenhouse_backdrop.jpg</video:thumbnail_loc>
+      <video:title>Step Inside Orchid Haven Nursery - Chathari, Tripunithura, Kochi Greenhouse Tour</video:title>
+      <video:description>Virtual walkthrough of Orchid Haven high-density orchid shade house in Chathari, Tripunithura, Kochi, Kerala showcasing flowering Dendrobiums, Vandas, and humidity misting setup.</video:description>
+      <video:content_loc>https://amaldas-ambatt.github.io/orchid-haven/assets/images/nursery/greenhouse_tour.mp4</video:content_loc>
+      <video:player_loc>https://amaldas-ambatt.github.io/orchid-haven/#greenhouse-tour</video:player_loc>
+      <video:publication_date>2026-09-01T08:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+</urlset>

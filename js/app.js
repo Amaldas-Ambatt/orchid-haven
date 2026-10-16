@@ -409,7 +409,7 @@ function renderCatalog() {
     return `
       <article class="orchid-card" data-id="${item.id}">
         <div class="card-img-wrap" onclick="openLightboxFromCatalog('${item.id}')" title="Click to view full photo">
-          <img src="${item.image}" alt="${item.name}" class="card-img expandable-img" loading="lazy">
+          <img src="${item.image}" alt="${item.name} - ${item.botanical} at Orchid Haven Nursery Tripunithura Kochi" class="card-img expandable-img" loading="lazy">
           <span class="card-badge-status">${item.statusBadge}</span>
           <div class="card-action-btns">
             <button class="card-zoom-btn" onclick="event.stopPropagation(); openLightboxFromCatalog('${item.id}')" title="Full Screen View" aria-label="Full screen view of ${item.name}">
@@ -463,7 +463,7 @@ window.openQuickView = function(id) {
 
   modalContent.innerHTML = `
     <div class="modal-img-col" onclick="openLightboxFromCatalog('${item.id}')" title="Click photo for fullscreen view">
-      <img src="${item.image}" alt="${item.name}" class="modal-img expandable-img">
+      <img src="${item.image}" alt="${item.name} - ${item.botanical} at Orchid Haven Nursery Tripunithura Kochi" class="modal-img expandable-img">
       <div class="modal-img-hint">
         <i class="fa-solid fa-expand"></i> Click photo for full screen
       </div>
